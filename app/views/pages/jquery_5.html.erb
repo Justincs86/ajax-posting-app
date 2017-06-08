@@ -1,0 +1,40 @@
+<style>
+  .error {
+    color: red;
+  }
+  .success {
+    color: green;
+  }
+  .middle {
+    color: blue;
+
+  }
+</style>
+
+<p>
+  <a id="my-add-class-click">Add Class</a>
+
+  <a id="my-remove-class-click">Remove Class</a>
+
+  <a id="my-remove-class1-click">Remove Class1</a>
+</p>
+
+<div id="foo">
+  <h1>bar</h1>
+</div>
+
+<script>
+  $("#my-add-class-click").click(function(){
+    $("#foo").removeClass('error');
+    $("#foo").addClass('success');
+  })
+
+  $("#my-remove-class-click").click(function(){
+    $("#foo").removeClass('success');
+    $("#foo").addClass("error");
+  })
+  $("#my-remove-class1-click").click(function(){
+    $("#foo").removeClass('error');
+    $('#foo').addClass('middle');
+  })
+</script>
