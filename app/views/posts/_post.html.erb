@@ -2,11 +2,16 @@
   <div class="panel-heading"><%= post.user.display_name %></div>
   <div class="panel-body">
     <%= post.content %>
+    <div class="text-right">
 
-    <% if current_user && post.user == current_user %>
-      <p class="text-right">
-        <%= link_to "Delete", post_path(post), :method => :delete, :remote => true, :class => "btn btn-danger" %>
-      </p>
-    <% end %>
+      <span id="post-like-<%= post.id %>" >
+        <%= render :partial => "like", :locals => { :post => post} %>
+      </span>
+
+        <% if current_user && post.user == current_user %>
+            <%= link_to "Delete", post_path(post), :method => :delete, :remote => true, :class => "btn btn-danger" %>
+        <% end %>
+    </div>
+
   </div>
  </div>
