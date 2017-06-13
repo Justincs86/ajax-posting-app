@@ -14,6 +14,8 @@ class PostsController < ApplicationController
   def destroy
     @post = current_user.posts.find(params[:id])   #只能删自己的贴
     @post.destroy
+
+    render :json => { :id => @post.id }
   end
 
   def like
